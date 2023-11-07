@@ -14,14 +14,14 @@ public class SpringifiedLoanApplication {
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		LoanAgent l1 = context.getBean("loanAgent", LoanAgent.class);
-		LoanApplication loanApplication = new LoanApplication();
+		LoanApplication loanApplication= context.getBean( "loanApplication", LoanApplication.class);
 		l1.processLoanApplication(loanApplication);
+		System.out.println();
 
-//		LoanApplication loanApplication = new LoanApplication();
-//		loanApplication.setSocialSecurityNumber("111-11-1111");
-//		System.out.println(loanApplication.getSSN());
 
-//		System.out.println(l1.processLoanApplication());
+
+
+
 
 	}
 }

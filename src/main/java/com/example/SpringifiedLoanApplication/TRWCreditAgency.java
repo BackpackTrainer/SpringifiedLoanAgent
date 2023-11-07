@@ -25,7 +25,7 @@ public class TRWCreditAgency implements ICreditAgency {
             case "222-22-2222":
                 return  199;
             default :
-                return  750; // Default case for unknown SSN
+                return  720; // Default case for unknown SSN
         }
     };
 

@@ -15,17 +15,16 @@ public class AppConfig {
     @Bean(name= "loanApplication")
     public LoanApplication getLoanApplication() {
         LoanApplication loanApplication = new LoanApplication();
+        loanApplication.setSocialSecurityNumber("111-111-111");
         return  loanApplication;
     }
 
     @Bean (name= "loanAgent")
-    public boolean getLoanAgentResult() throws InvalidCreditScoreException {
-        LoanAgent agent = new LoanAgent();
-        LoanApplication loanApplication = new LoanApplication();
+    public LoanAgent getLoanAgent() throws InvalidCreditScoreException {
+        LoanAgent agent = new LoanAgent(getLoanApplication());
         agent.setAgency(getTRWCreditAgency());
         agent.setMinimumCreditScore(agent.getMinimumCreditScore());
-        //agent.processLoanApplication(loanApplication);
-        return agent.processLoanApplication(loanApplication);
+        return agent;
     }
 
 

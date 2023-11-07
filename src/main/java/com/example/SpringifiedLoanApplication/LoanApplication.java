@@ -6,11 +6,14 @@ import java.util.List;
 public class LoanApplication implements ILoanApplication{
 
     SocialSecurity socialSecurity= new SocialSecurity();
-    private  String socialSecurityNumber ="";
+    private  String socialSecurityNumber ="111-11-1111";
     public String getSSN() {
-        if (socialSecurityNumber.equals(socialSecurity.ListOfSSN()))
-            return socialSecurityNumber;
-        return null;
+//        if (socialSecurityNumber.equals(socialSecurity.listOfSSN()))
+//            return socialSecurityNumber;
+//        else{
+//            return null;
+//        }
+        return socialSecurityNumber;
     }
 
     public String getSocialSecurityNumber() {
