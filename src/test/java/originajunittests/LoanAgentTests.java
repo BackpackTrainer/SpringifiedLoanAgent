@@ -1,7 +1,7 @@
 package originajunittests;
 
-import com.example.InvalidCreditScoreException;
-import com.example.LoanAgent;
+import InvalidCreditScoreException;
+import LoanAgent;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;

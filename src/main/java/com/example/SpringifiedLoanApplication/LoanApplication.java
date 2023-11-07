@@ -1,6 +1,6 @@
-package com.example;
+package com.example.SpringifiedLoanApplication;
 
-public class LoanApplication implements ILoanApplication{
+public class LoanApplication implements ILoanApplication {
 
     private String ssn;
     public String getSSN() {

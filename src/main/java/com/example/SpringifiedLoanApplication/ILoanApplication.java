@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SpringifiedLoanApplication;
 
 @FunctionalInterface
 public interface ILoanApplication {

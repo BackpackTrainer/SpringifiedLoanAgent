@@ -1,4 +1,4 @@
-package com.example;
+package com.example.SpringifiedLoanApplication;
 
 public class OriginalLoanAgent {
     ICreditAgency agency;

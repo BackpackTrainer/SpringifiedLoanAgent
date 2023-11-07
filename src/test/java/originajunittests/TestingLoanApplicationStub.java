@@ -1,6 +1,6 @@
 package originajunittests;
 
-import com.example.ILoanApplication;
+import ILoanApplication;
 
 public class TestingLoanApplicationStub implements ILoanApplication {
     @Override
