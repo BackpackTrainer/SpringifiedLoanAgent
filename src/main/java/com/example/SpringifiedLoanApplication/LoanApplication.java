@@ -1,7 +1,15 @@
 package com.example.SpringifiedLoanApplication;
 
-public class LoanApplication {
+import java.util.ArrayList;
+import java.util.List;
+
+public class LoanApplication implements ILoanApplication{
+
+    SocialSecurity socialSecurity= new SocialSecurity();
     public String getSSN() {
-        return "dummy ssn";
+
+        return socialSecurity.ListOfSSN().toString();
     }
+
+
 }

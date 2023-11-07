@@ -2,12 +2,21 @@ package com.example.SpringifiedLoanApplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class SpringifiedLoanApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringifiedLoanApplication.class, args);
+
+		//SpringApplication.run(SpringifiedLoanApplication.class, args);
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+		LoanAgent l1 = context.getBean("loanAgent", LoanAgent.class);
+
+		System.out.println(l1.processLoanApplication());
+
 	}
 }
 
