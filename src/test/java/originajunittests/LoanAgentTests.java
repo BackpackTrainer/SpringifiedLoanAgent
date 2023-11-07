@@ -1,7 +1,8 @@
 package originajunittests;
 
-import InvalidCreditScoreException;
-import LoanAgent;
+import com.example.SpringifiedLoanApplication.IErrorLog;
+import com.example.SpringifiedLoanApplication.InvalidCreditScoreException;
+import com.example.SpringifiedLoanApplication.LoanAgent;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,9 +15,11 @@ public class LoanAgentTests {
     TestingLoanApplicationStub loanApplication;
     CreditAgencyTestingStub agency;
 
+    IErrorLog errorLog;
+
     @BeforeEach
     public void setUp() {
-        uut = new LoanAgent();
+        uut = new LoanAgent(agency,errorLog);
         loanApplication = new TestingLoanApplicationStub();
         agency = new CreditAgencyTestingStub();
         uut.setAgency(agency);
