@@ -12,9 +12,9 @@ public class SpringifiedLoanApplication {
 
 		ApplicationContext appConfigure = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		LoanAgent loanAgent = appConfigure.getBean(LoanAgent.class);
+		LoanAgent loanAgent = appConfigure.getBean("loanAgent",LoanAgent.class);
 		LoanApplication loanApplication = new LoanApplication();
-		loanApplication.setSSN("111-11-1111");
+		loanApplication.setSSN("444-44-4444");
 
 		try {
 			boolean result = loanAgent.processLoanApplication(loanApplication);
