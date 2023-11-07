@@ -1,14 +1,22 @@
-package com.example.SpringifiedLoanApplication;
+package com.example;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringifiedLoanApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringifiedLoanApplication.class, args);
-	}
+//		SpringApplication.run(SpringifiedLoanApplication.class, args);
+
+		ApplicationContext appConfigure = new AnnotationConfigApplicationContext(AppConfig.class);
+		LoanAgent agent = new LoanAgent();
+
+
 }
 
 /*
@@ -32,6 +40,6 @@ TODO:  add code to the processLoanApplication() function to print out the social
 TODO: Rewrite the main method to retrieve a loan agent object from the IOC container and then process
  loan applications using each of the social security numbers above
 
- TODO:  re-run your tests.  Did they pass?  Notice that the tests are not using Spring at all.
+TODO:  re-run your tests.  Did they pass?  Notice that the tests are not using Spring at all.
   We will cover how to do unit testing with Spring in a subsequent section
  */

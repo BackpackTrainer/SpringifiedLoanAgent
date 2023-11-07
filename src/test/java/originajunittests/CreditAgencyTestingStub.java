@@ -1,6 +1,6 @@
 package originajunittests;
 
-import com.example.SpringifiedLoanApplication.ICreditAgency;
+import com.example.ICreditAgency;
 
 public class CreditAgencyTestingStub implements ICreditAgency {
     int creditScore;
