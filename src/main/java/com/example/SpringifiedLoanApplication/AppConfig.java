@@ -19,13 +19,13 @@ public class AppConfig {
     }
 
     @Bean (name= "loanAgent")
-    public LoanAgent getLoanAgentResult() throws InvalidCreditScoreException {
+    public boolean getLoanAgentResult() throws InvalidCreditScoreException {
         LoanAgent agent = new LoanAgent();
         LoanApplication loanApplication = new LoanApplication();
         agent.setAgency(getTRWCreditAgency());
         agent.setMinimumCreditScore(agent.getMinimumCreditScore());
-        agent.processLoanApplication(loanApplication);
-        return agent;
+        //agent.processLoanApplication(loanApplication);
+        return agent.processLoanApplication(loanApplication);
     }
 
 

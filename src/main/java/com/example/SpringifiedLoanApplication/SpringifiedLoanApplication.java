@@ -8,14 +8,20 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 public class SpringifiedLoanApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidCreditScoreException {
 
 		//SpringApplication.run(SpringifiedLoanApplication.class, args);
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		LoanAgent l1 = context.getBean("loanAgent", LoanAgent.class);
+		LoanApplication loanApplication = new LoanApplication();
+		l1.processLoanApplication(loanApplication);
 
-		System.out.println(l1.processLoanApplication());
+//		LoanApplication loanApplication = new LoanApplication();
+//		loanApplication.setSocialSecurityNumber("111-11-1111");
+//		System.out.println(loanApplication.getSSN());
+
+//		System.out.println(l1.processLoanApplication());
 
 	}
 }
