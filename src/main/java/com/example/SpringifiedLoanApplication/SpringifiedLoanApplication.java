@@ -11,9 +11,19 @@ public class SpringifiedLoanApplication {
 //		SpringApplication.run(SpringifiedLoanApplication.class, args);
 
 		ApplicationContext appConfigure = new AnnotationConfigApplicationContext(AppConfig.class);
-		LoanAgent agent = new LoanAgent();
 
+		LoanAgent loanAgent = appConfigure.getBean(LoanAgent.class);
+		LoanApplication loanApplication = new LoanApplication();
+		loanApplication.setSSN("111-11-1111");
 
+		try {
+			boolean result = loanAgent.processLoanApplication(loanApplication);
+			System.out.println("Loan application processed: " + result);
+		} catch (InvalidCreditScoreException e) {
+			System.out.println("An error occurred: " + e.getMessage());
+		}
+
+	}
 }
 
 /*

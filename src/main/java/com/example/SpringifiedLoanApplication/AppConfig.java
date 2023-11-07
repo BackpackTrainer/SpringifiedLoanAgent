@@ -11,16 +11,22 @@ public class AppConfig {
     private static final int minimumCreditScore = 720;
 
     @Bean(name = "trw")
-    public ICreditAgency getTRW(){
+    public ICreditAgency creditAgency(){
         return new TRWCreditAgency();
     }
 
 
-    @Bean
-    public LoanAgent loanAgent(ICreditAgency creditAgency) {
-        LoanAgent agent = new LoanAgent();
+    @Bean(name="loanAgent")
+    public LoanAgent loanAgent(ICreditAgency creditAgency, IErrorLog errorLog) {
+        LoanAgent agent = new LoanAgent(creditAgency, errorLog);
         agent.setAgency(creditAgency);
         agent.setMinimumCreditScore(minimumCreditScore);
         return agent;
     }
+
+    @Bean
+    public IErrorLog errorLog() {
+        return new ConsoleErrorLog();
+    }
+
 }

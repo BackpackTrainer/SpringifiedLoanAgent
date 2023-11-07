@@ -4,7 +4,7 @@ public class LoanApplication implements ILoanApplication {
 
     private String ssn;
     public String getSSN() {
-        return "dummy ssn";
+        return ssn;
     }
     public String setSSN(String ssn) {
         this.ssn = ssn;

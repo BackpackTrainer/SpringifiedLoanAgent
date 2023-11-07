@@ -6,6 +6,12 @@ public class LoanAgent {
 
     IErrorLog errorLog;
 
+    public LoanAgent(ICreditAgency agency, IErrorLog errorLog) {
+        this.agency=agency;
+        this.errorLog=errorLog;
+    }
+
+
     public boolean processLoanApplication(ILoanApplication application) throws InvalidCreditScoreException {
         boolean response = false;
         String ssn = application.getSSN();
