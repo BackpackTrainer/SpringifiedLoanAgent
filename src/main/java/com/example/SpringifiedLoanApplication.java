@@ -21,7 +21,7 @@ public class SpringifiedLoanApplication {
 
 /*
 TODO:  Add the appropriate beans to the LoanAppConfig.xml file
-TODO:  Set the minimum credit score in the application.properties file
+TODO:  Set the minimum credit score in the application.properties file- // do not worry about this one
 TODO:  Create a dummy implementation of the ICreditAgency interface that
 	returns 719 for a social security number of 111-11-1111
 	returns 721 for a social security number of 333-33-3333
